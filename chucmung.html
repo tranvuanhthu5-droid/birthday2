@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<title>Lời chúc sinh nhật</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:radial-gradient(circle,#020617,#0f172a);
+color:white;
+text-align:center;
+padding:100px 20px;
+overflow:hidden;
+}
+
+.card{
+
+max-width:700px;
+margin:auto;
+background:rgba(255,255,255,0.1);
+padding:60px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+animation:fadeUp 1.5s;
+
+}
+
+h2{
+color:#facc15;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.confetti{
+position:fixed;
+width:8px;
+height:8px;
+top:-10px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh) rotate(720deg);
+opacity:0;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Chúc Ba Sinh Nhật Dui Dẻ</h2>
+
+<p>
+Hôm nay, 16/3, là một ngày siêu đặc biệt, ngày mà
+người quan trọng nhất của gia đình mình được sinh ra.
+BiBo chúc Ba sinh nhật dui dẻ và sẽ có thể tận hưởng trọn vẹn ngày hôm nay.
+</p>
+
+<p>
+Hôm nay tụ con hong có ở đó, dị để lời chúc dề trước rồi quà hè dề sau nghe.
+Nay nhờ mẹ thay tụ con tổ chức sinh nhật thiệt bự cho Ba nhe.
+</p>
+
+<p>
+Tụ con chúc Ba luôn thật nhiều sức khỏe,
+luôn vui vẻ, bình an
+và có thật nhiều niềm vui trong cuộc sống.
+</p>
+
+<h2>❤️ Happy Birthday Ba Maooo ❤️</h2>
+
+<p class="footer">
+BiBo yêu Ba nhất trên đời.
+</p>
+
+</div>
+
+<script>
+
+function createConfetti(){
+
+for(let i=0;i<150;i++){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.background="hsl("+Math.random()*360+",100%,50%)";
+
+c.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(c);
+
+}
+
+}
+
+createConfetti();
+
+</script>
+
+</body>
+
+</html>

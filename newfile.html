@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:radial-gradient(circle at top,#1e293b,#020617);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+overflow:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:0;
+}
+
+.container{
+position:relative;
+z-index:1;
+animation:fadeIn 2s ease;
+}
+
+h1{
+font-size:80px;
+margin:0;
+}
+
+.subtitle{
+font-size:28px;
+color:#facc15;
+margin-top:10px;
+}
+
+button{
+margin-top:40px;
+padding:18px 45px;
+font-size:20px;
+border:none;
+border-radius:15px;
+background:#facc15;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+box-shadow:0 10px 30px rgba(250,204,21,.3);
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="fireworks"></canvas>
+
+<div class="container">
+
+<h1>🎂 Happy Birthday</h1>
+
+<p class="subtitle">
+Chúc mừng sinh nhật Ba
+</p>
+
+<button onclick="openLetter()">
+Mở lời chúc
+</button>
+
+</div>
+
+<script>
+
+/* chuyển trang */
+
+function openLetter(){
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+window.location.href="message.html";
+},600);
+
+}
+
+/* pháo hoa */
+
+const canvas=document.getElementById("fireworks");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+function firework(){
+
+let x=Math.random()*canvas.width;
+let y=Math.random()*canvas.height/2;
+
+for(let i=0;i<100;i++){
+
+particles.push({
+x:x,
+y:y,
+vx:(Math.random()-0.5)*6,
+vy:(Math.random()-0.5)*6,
+life:100
+});
+
+}
+
+}
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+ctx.fillStyle="rgba(0,0,0,0.2)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+particles.forEach((p,i)=>{
+
+p.x+=p.vx;
+p.y+=p.vy;
+p.life--;
+
+ctx.fillStyle="hsl("+Math.random()*360+",100%,60%)";
+ctx.fillRect(p.x,p.y,3,3);
+
+if(p.life<=0)particles.splice(i,1);
+
+});
+
+}
+
+setInterval(firework,1500);
+
+animate();
+
+</script>
+
+</body>
+</html>
