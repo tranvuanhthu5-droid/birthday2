@@ -223,7 +223,9 @@ p.y+=p.vy;
 p.life--;
 
 ctx.fillStyle="hsl("+Math.random()*360+",100%,60%)";
-ctx.fillRect(p.x,p.y,3,3);
+ctx.beginPath();
+ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+ctx.fill();
 
 if(p.life<=0)particles.splice(i,1);
 
