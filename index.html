@@ -38,16 +38,20 @@ h1{
 display:flex;
 align-items:center;
 justify-content:center;
+
+flex-wrap:wrap;
+font-size:clamp(42px, 8vw, 80px);
+text-align:center;
 }
 
 .cake{
-font-size:70px;
+font-size:clamp(36px,6vw,70px);
 margin-right:15px;
 vertical-align:middle;
 }
 
 .title{
-font-size:80px;
+font-size:clamp(42px,8vw,80px);
 color:white;
 
 text-shadow:
@@ -61,6 +65,9 @@ text-shadow:
 
 .subtitle{
 font-family:'Dancing Script', cursive;
+background:linear-gradient(#fff7cc,#facc15,#fff7cc);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 font-size:50px;
 margin-top:16px;
 line-height:1.3;
