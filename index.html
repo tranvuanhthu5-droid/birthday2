@@ -202,7 +202,8 @@ x:x,
 y:y,
 vx:(Math.random()-0.5)*6,
 vy:(Math.random()-0.5)*6,
-life:100
+life:80,
+size:Math.random()*3+1
 });
 
 }
@@ -223,9 +224,13 @@ p.y+=p.vy;
 p.life--;
 
 ctx.fillStyle="hsl("+Math.random()*360+",100%,60%)";
+ctx.globalAlpha = p.life / 80;
+
 ctx.beginPath();
-ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
 ctx.fill();
+
+ctx.globalAlpha = 1;
 
 if(p.life<=0)particles.splice(i,1);
 
