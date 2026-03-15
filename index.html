@@ -34,17 +34,27 @@ animation:fadeIn 2s ease;
 }
 
 h1{
-font-size:80px;
-margin:0;
-letter-spacing:2px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
 
-background:linear-gradient(90deg,#ffffff,#facc15,#ffffff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+.cake{
+font-size:70px;
+margin-right:15px;
+vertical-align:middle;
+}
+
+.title{
+font-size:80px;
+letter-spacing:3px;
+color:white;
 
 text-shadow:
-0 4px 20px rgba(0,0,0,0.6),
-0 0 25px rgba(250,204,21,0.6);
+0 3px 0 #000,
+0 0 10px rgba(255,255,255,0.9),
+0 0 25px rgba(250,204,21,0.9),
+0 0 50px rgba(250,204,21,0.6);
 }
 
 .subtitle{
@@ -101,7 +111,10 @@ padding:18px 34px;
 
 <div class="container">
 
-<h1>🎂 Happy Birthday 🎂</h1>
+<h1>
+<span class="cake">🎂</span>
+<span class="title">Happy Birthday</span>
+</h1>
 
 <p class="subtitle">
 Chúc mừng sinh nhật Ba
