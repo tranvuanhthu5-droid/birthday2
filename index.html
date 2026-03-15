@@ -54,6 +54,8 @@ text-shadow:
 0 0 10px rgba(255,255,255,0.9),
 0 0 25px rgba(250,204,21,0.9),
 0 0 50px rgba(250,204,21,0.6);
+0 0 15px rgba(255,215,0,0.9),
+0 0 35px rgba(255,215,0,0.6);
 }
 
 .subtitle{
@@ -86,8 +88,18 @@ to{opacity:1;transform:translateY(0);}
 
 @media (max-width:600px){
 
-h1{
+.title{
+font-size:42px;
+letter-spacing:1px;
+}
+
+.cake{
 font-size:40px;
+margin-right:8px;
+}
+
+h1{
+flex-wrap:wrap;
 }
 
 .subtitle{
@@ -112,7 +124,7 @@ padding:18px 34px;
 
 <h1>
 <span class="cake">🎂</span>
-<span class="title">Happy Birthday</span>
+<span class="title"> Happy Birthday </span>
 <span class="cake">🎂</span>
 </h1>
 
