@@ -184,12 +184,20 @@ function openLetter(){
 
 const music = document.getElementById("music");
 
-music.currentTime = 100; 
-music.play();
+music.currentTime = 100;
+
+music.play().then(()=>{
 
 setTimeout(()=>{
 window.location.href="chucmung.html";
-},500);
+},1500);
+
+}).catch(err=>{
+console.log("audio blocked",err);
+window.location.href="chucmung.html";
+});
+
+}
 
 }
 
