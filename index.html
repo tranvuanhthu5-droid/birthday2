@@ -157,7 +157,7 @@ padding:18px 34px;
 Chúc mừng sinh nhật Ba
 </p>
 
-<a href="./chucmung.html">
+<a class="button-link" href="chucmung.html" onclick="playMusic()">
 <button>
 Bấm vô đây nè
 </button>
@@ -166,6 +166,19 @@ Bấm vô đây nè
 </div>
 
 <script>
+
+function playMusic(){
+
+const music = document.getElementById("music");
+
+music.currentTime = 100;
+music.play();
+
+setTimeout(()=>{
+music.pause();
+},50000);
+
+}
 
 /* chuyển trang */
 
@@ -254,6 +267,8 @@ fireworkInterval = setInterval(firework,1500);
 animate();
 
 </script>
-
+<audio id="music">
+<source src="music.m4a" type="audio/mp4">
+</audio>
 </body>
 </html>
