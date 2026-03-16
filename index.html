@@ -58,7 +58,7 @@ text-shadow:
 0 3px 0 #000,
 0 0 10px rgba(255,255,255,0.9),
 0 0 25px rgba(250,204,21,0.9),
-0 0 50px rgba(250,204,21,0.6);
+0 0 50px rgba(250,204,21,0.6),
 0 0 15px rgba(255,215,0,0.9),
 0 0 35px rgba(255,215,0,0.6);
 }
@@ -157,11 +157,9 @@ padding:18px 34px;
 Chúc mừng sinh nhật Ba
 </p>
 
-<a class="button-link" href="chucmung.html" onclick="playMusic()">
-<button>
+<button class="button-link" onclick="openLetter()">
 Bấm vô đây nè
 </button>
-</a>
 
 </div>
 
@@ -184,11 +182,14 @@ music.pause();
 
 function openLetter(){
 
-document.body.style.opacity="0";
+const music = document.getElementById("music");
+
+music.currentTime = 100; 
+music.play();
 
 setTimeout(()=>{
-window.location.href="./chucmung.html";
-},600);
+window.location.href="chucmung.html";
+},500);
 
 }
 
